@@ -23,13 +23,29 @@ During training of the model, it is advisable to split the training sets into va
 
 
 Convolutional neural network mechanism
+
+
 If a convolutional neural network is made to slide on an image with dimension 32 x32 x 3 representing the width, height and depth (RGB channels) in a CIFAR -10 DATASET, the input layer will receive the input image which can be an image or sequence of images. 
+
+
 Pixels are the smallest element in a digitally displayed image. These pixels are composed of sub pixels in the colors of Red, Green and Blue (RGB) and each pixel is an image corresponding to a value of 0 to 255 with zero (0) being black and 255 white.
+
+
 The convolutional layer extracts the features from the input dataset using a set of learnable filters (kernels) in a convolutional operation. The convolution operation involves sliding the filter through the input image step by step where each step is called a stride. The stride can be one (1), two (2), and three (3) but it is preferable to work with smaller strides.
+
+
 During the sliding process, a multiplication of a grid from the original input image with the grid from the filter generates a value. Carrying out the average of these values produces the feature map. Smaller filters and smaller strides extract more features from the input image. A filter size of 3x3 and a stride of one (1) is usually preferred. 
+
+
 Two other operations performed in a convolutional neural network architecture include the addition of activation functions and pooling. Activation functions such as ReLu, sigmoid, leaky ReLu brings non-linearity into the mathematical equation of the model making it useful for binary classification task. Using ReLu as the activation function changes all the negative numbers on a grid to zero (0) and when the number is positive and more than zero, it leaves the number as it is.
+
+
 The application of filters and activation function (ReLu) does not change the output volume of the feature map, pooling makes this possible. The pooling layer also makes the computation faster, reduces memory and prevents overfitting. Max pooling and Average pooling are two most common types of pooling. The max-pooling layer makes use of the maximum number in each stride while average pooling takes the average of the numbers in each stride.
+
+
 A flattening of the resulting feature maps into a one-dimensional vector after the convolution and pooling layers takes place so that they can be passed into a completely linked layer for categorization.
+
+
 The fully connected layers take the input from the previous layer and computes the final classification. The output from the fully connected layers is then fed into a logistic function such as Softmax or sigmoid for classification task. This logistic function converts the output of each class into the probability score of each class.
 
 
